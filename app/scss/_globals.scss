@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  min-height: 100vh;
+  background-color: $clr-blue-darken3;
+  color: $clr-white;
+  line-height: 1.3;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  cursor: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 0;
+  outline: none;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+a {
+  color: $clr-white;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Display classes
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+.hide-on-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-on-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
