@@ -9,13 +9,10 @@
 
   .nav-bar {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     &__logo {
       min-width: 15rem;
-      max-width: 35rem;
+      max-width: 30rem;
     }
 
     &__links {
