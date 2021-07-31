@@ -16,30 +16,27 @@
   </head>
   <body>
     <header class="header">
-        <nav id="nav-bar" class="nav-bar flex flex-ai-c flex-jc-sa">
-           <a href="#" class="nav-bar__logo">
+        <a href="#" class="header__logo">
             <img
-              src="https://files.dubsquared.com/index.php/apps/sharingpath/shaggy/www/DirtyPoolFilters-Logo__transparent.png"
-              alt="Dirty Pool Filters"
+                src="https://files.dubsquared.com/index.php/apps/sharingpath/shaggy/www/DirtyPoolFilters-Logo__transparent.png"
+                alt="Dirty Pool Filters"
             />
-           </a>
-           <div class="nav-bar__hamburger hide-on-desktop">
-            <input id="hamburger-checkbox" type="checkbox"/>
-            <label for="hamburger-checkbox">
-               <span></span>
-               <span></span>
-               <span></span>
-            </label>
-           </div>
-           
-           <div class="nav-bar__links flex flex-ai-c hide-on-mobile">
+        </a>
+        <input id="nav-toggle" class="nav-toggle" type="checkbox"/>
+        <nav id="nav-bar" class="nav-bar">           
+           <div class="nav-bar__links">
               <a href="#" class="nav-link">Home</a>
               <a href="#services" class="nav-link">Services</a>
               <a href="#pricing" class="nav-link">Pricing</a>
               <a href="#about" class="nav-link">About</a>
            </div>
-           <a href="#contact" class="button nav-bar__cta hide-on-mobile">Contact Us</a>
+           <a href="#contact" class="button nav-bar__cta">Contact Us</a>
         </nav>
+        <label for="nav-toggle" class="nav-toggle-label hide-on-desktop">
+            <span></span>
+            <span></span>
+            <span></span>
+         </label>
       </header>
       
       <main id="main" class="main container">

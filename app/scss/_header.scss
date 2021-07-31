@@ -3,21 +3,107 @@
   position: sticky;
   top: 0;
   display: grid;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  height: 6rem;
+  grid-template-columns: 1.5rem 6fr 1fr 1.5rem;
+  grid-template-rows: 6rem auto;
+  grid-template-areas: 
+    ". nav-logo nav-toggle ."
+    ". nav-bar nav-bar .";
+  justify-content: center;
+  align-items: center;
   width: 100%;
   z-index: 999;
 
-  .nav-bar {
-    position: relative;
+  @include breakpoint-up(large) {
+    grid-template-columns: 1fr 6fr 6fr 1fr;
+    grid-template-rows: 6rem;
+    grid-template-areas: ". nav-logo nav-bar .";
+  }
 
-    &__logo {
-      min-width: 15rem;
-      max-width: 30rem;
+  &__logo {
+    grid-area: nav-logo;
+    min-width: 22rem;
+    max-width: 32rem;
+  }
+
+  .nav-toggle {
+    display: none;
+
+    &:checked {
+      & ~ .nav-bar {
+          transform: scale(1,1);
+      }
+
+      & ~ .nav-toggle-label {
+        > span {
+          background-color: $clr-black;
+        }
+
+        > span:first-child {
+          transform: rotate(45deg);
+        }
+
+        > span:nth-child(2) {
+          opacity: 0;
+        }
+
+        > span:last-child {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .nav-toggle-label {
+    grid-area: nav-toggle;
+    cursor: pointer;
+    height: 2.8rem;
+    margin: 0 auto;
+
+    > span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background-color: $clr-white;
+      transition: all 300ms ease-in-out;
+      transform: rotate(0deg);
+      transform-origin: 2px 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .nav-bar {
+    grid-area: nav-bar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: inherit;
+    width: 100%;
+    transform: scale(1, 0);
+
+    @include breakpoint-up(large) {
+        flex-direction: row;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: scale(1,1);
     }
 
     &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      width: 100%;
+
+      @include breakpoint-up(large) {
+          flex-direction: row;
+      }
 
       a {
         position: relative;
@@ -46,55 +132,6 @@
 
           &::before {
             opacity: 1;
-          }
-        }
-      }
-    }
-
-    &__hamburger {
-      cursor: pointer;
-      padding: 0.5rem;
-      margin-left: 1rem;
-
-      input {
-        display: none;
-
-        &:checked {
-          & + label {
-            > span {
-              background-color: $clr-black;
-            }
-
-            > span:first-child {
-              transform: rotate(45deg);
-            }
-
-            > span:nth-child(2) {
-              opacity: 0;
-            }
-
-            > span:last-child {
-              transform: rotate(-45deg);
-            }
-          }
-        }
-      }
-
-      label {
-        cursor: inherit;
-        height: 2.8rem;
-
-        > span {
-          display: block;
-          width: 26px;
-          height: 3px;
-          background-color: $clr-white;
-          transition: all 300ms ease-in-out;
-          transform: rotate(0deg); // fix for transform not working on IOS chrome browswers
-          transform-origin: 2px 1px;
-
-          &:not(:last-child) {
-            margin-bottom: 5px;
           }
         }
       }
