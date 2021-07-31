@@ -277,6 +277,8 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -306,6 +308,11 @@ img {
   margin-bottom: 1rem;
   opacity: 0;
   background: #012b4b;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+  -webkit-transition-property: background;
+  transition-property: background;
+  border-radius: 2px;
 }
 
 @media only screen and (min-width: 64em) {
@@ -313,6 +320,9 @@ img {
     opacity: 1;
     margin-bottom: 0;
     margin-right: 1rem;
+  }
+  .header .nav-bar__links a:last-child {
+    margin-right: 3rem;
   }
 }
 
@@ -328,14 +338,15 @@ img {
   opacity: 0;
   -webkit-transform: scale(0, 1);
           transform: scale(0, 1);
-  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
-  transition: opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, opacity 200ms ease-in-out;
-  transition: transform 300ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transition: all 290ms ease-in-out;
+  transition: all 290ms ease-in-out;
+  border-radius: 0px 0px 2px 2px;
 }
 
 .header .nav-bar__links a:hover {
   background: #013b65;
+  -webkit-transition-property: background;
+  transition-property: background;
 }
 
 .header .nav-bar__links a:hover::before {
