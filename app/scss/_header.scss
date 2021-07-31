@@ -1,27 +1,31 @@
+$header-height: 6rem;
+$header-height-desktop: 7rem;
+
 .header {
-  background-color: $clr-blue-darken3;
   position: sticky;
   top: 0;
   display: grid;
   grid-template-columns: 1.5rem 6fr 1fr 1.5rem;
-  grid-template-rows: 6rem auto;
+  grid-template-rows: $header-height auto;
   grid-template-areas:
     ". nav-logo nav-toggle ."
     "nav-bar nav-bar nav-bar nav-bar";
   justify-content: center;
   align-items: center;
+  background-color: $clr-blue-darken3;
+  font-size: 1.5rem;
   width: 100%;
   z-index: 999;
-  font-size: 1.5rem;
 
   @include breakpoint-up(large) {
     grid-template-columns: 1fr 6fr 6fr 1fr;
-    grid-template-rows: 7rem;
+    grid-template-rows: $header-height-desktop;
     grid-template-areas: ". nav-logo nav-bar .";
   }
 
   &__logo {
     grid-area: nav-logo;
+    height: auto;
     min-width: 22rem;
     max-width: 32rem;
 
@@ -45,10 +49,6 @@
       }
 
       & ~ .nav-toggle-label {
-        > span {
-          background-color: $clr-black;
-        }
-
         > span:first-child {
           transform: rotate(45deg);
         }
@@ -68,13 +68,15 @@
     grid-area: nav-toggle;
     cursor: pointer;
     margin: 0 auto;
+    border: none;
 
     > span {
       display: block;
-      width: 26px;
       height: 3px;
+      width: 26px;
       background-color: $clr-white;
-      transition: transform 300ms ease-in-out;
+      transition: transform 300ms ease-in-out,
+        opacity 200ms ease-in-out;
       transform: rotate(0deg);
       transform-origin: 2px 1px;
 
@@ -86,14 +88,14 @@
 
   .nav-bar {
     grid-area: nav-bar;
-    border-top: 2px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: absolute;
     top: 100%;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: inherit;
+    border-top: 2px solid white;
     width: 100%;
     text-transform: uppercase;
     transform: scale(1, 0);
@@ -101,11 +103,11 @@
     transition: transform 400ms ease-in-out;
 
     @include breakpoint-up(large) {
-      border: none;
-      flex-direction: row;
       position: relative;
       top: initial;
       left: initial;
+      flex-direction: row;
+      border: none;
       transition: none;
       transform: scale(1, 1);
     }
@@ -123,26 +125,25 @@
       }
 
       @include breakpoint-up(large) {
-        width: 100%;
         flex-direction: row;
+        width: 100%;
       }
 
       .nav-link {
         position: relative;
         line-height: 6rem;
         margin-bottom: 1rem;
-        opacity: 0;
         background: $clr-blue-darken3;
-        border-radius: 2px;
+        opacity: 0;
 
         &:first-child {
           margin-top: 2rem;
         }
 
         @include breakpoint-up(large) {
-          opacity: 1;
           margin-bottom: 0;
           margin-right: 1rem;
+          opacity: 1;
 
           &:first-child {
             margin-top: 0;
@@ -157,20 +158,20 @@
           content: "";
           display: block;
           position: absolute;
-          border-bottom: 5px solid $clr-light-blue-lighten1;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
           background-color: rgba($clr-white, 0.25);
+          border-bottom: 5px solid $clr-light-blue-lighten1;
+          border-radius: 2px;
           opacity: 0;
           transform: scale(0, 1);
-          transition: transform 290ms ease-in-out;
-          border-radius: 0px 0px 2px 2px;
+          transition: transform 250ms ease-in-out,
+            opacity 300ms ease-in-out;
         }
 
         &:hover {
-
           &::before {
             opacity: 1;
             transform: scale(1, 1);
@@ -181,16 +182,15 @@
 
     &__cta {
       position: relative;
-      width: 50%;
-      border: 2px solid $clr-white;
-      background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
       text-align: center;
-      padding: 1rem 0px;
+      width: 50%;
       margin-top: 1rem;
       margin-bottom: 3rem;
+      padding: 1rem 0px;
+      background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
+      border: 2px solid $clr-white;
       border-radius: 10px;
       opacity: 0;
-      transition: opacity 150ms ease-in-out;
       overflow: hidden;
 
       @include breakpoint-up(medium) {
@@ -213,11 +213,14 @@
         left: 0;
         background-color: rgba(255, 255, 255, 0.25);
         opacity: 0;
-        transition: opacity 150ms ease-in-out;
+        transform: scale(0,1);
+        transition: transform 250ms ease-in-out,
+          opacity 200ms ease-in-out;
       }
 
       &:hover::before {
         opacity: 1;
+        transform: scale(1,1);
       }
     }
   }
