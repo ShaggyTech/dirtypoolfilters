@@ -1,10 +1,41 @@
 .main {
-    background-color: $clr-light-blue;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  
-    @include breakpoint-up(medium) {
-      padding-left: 5rem;
-      padding-right: 5rem;
+  background-color: $clr-light-blue;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "container2"
+    "container1";
+  gap: 2rem;
+  place-content: center;
+  align-content: center;
+
+  @include breakpoint-up(large) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "container1 container2";
+    height: 100vh;
+  }
+
+  &__container1 {
+    grid-area: container1;
+    display: grid;
+    place-content: center;
+
+    img {
+      object-fit: contain;
+      width: 100%;
     }
+  }
+
+  &__container1 {
+    grid-area: container2;
+    display: grid;
+    place-content: center;
+    align-content: center;
+  }
 }

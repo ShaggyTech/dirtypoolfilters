@@ -70,7 +70,7 @@ img {
 }
 
 .container {
-  max-width: 87.5em;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -210,14 +210,15 @@ img {
   height: 3px;
   width: 26px;
   background-color: #fbf9f9;
-  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
-  transition: opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, opacity 200ms ease-in-out;
-  transition: transform 300ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-transform-origin: 2px 1px;
           transform-origin: 2px 1px;
+  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  transition: opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, opacity 200ms ease-in-out;
+  transition: transform 300ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  will-change: transform opacity;
 }
 
 .header .nav-toggle-label > span:not(:last-child) {
@@ -254,6 +255,7 @@ img {
   transition: -webkit-transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  will-change: transform;
 }
 
 @media only screen and (min-width: 64em) {
@@ -312,6 +314,15 @@ img {
   margin-bottom: 1rem;
   background: #012b4b;
   opacity: 0;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  transition: opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, opacity 300ms ease-in-out;
+  transition: transform 250ms ease-in-out, opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  will-change: transform opacity;
 }
 
 .header .nav-bar__links .nav-link:first-child {
@@ -342,11 +353,13 @@ img {
   bottom: 0;
   left: 0;
   background-color: rgba(251, 249, 249, 0.25);
-  border-bottom: 5px solid #61a5c2;
+  border-bottom: 5px inset #61a5c2;
   border-radius: 2px;
   opacity: 0;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: inherit;
+          transform-origin: inherit;
   -webkit-transition: opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
   transition: opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, opacity 300ms ease-in-out;
@@ -372,6 +385,7 @@ img {
   border-radius: 10px;
   opacity: 0;
   overflow: hidden;
+  will-change: opacity;
 }
 
 @media only screen and (min-width: 40em) {
@@ -398,12 +412,10 @@ img {
   left: 0;
   background-color: rgba(255, 255, 255, 0.25);
   opacity: 0;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
-  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 250ms ease-in-out;
-  transition: opacity 200ms ease-in-out, -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out, opacity 200ms ease-in-out;
-  transition: transform 250ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
 .header .nav-bar__cta:hover::before {
@@ -420,10 +432,52 @@ img {
   padding-right: 1.5rem;
 }
 
-@media only screen and (min-width: 40em) {
-  .main {
-    padding-left: 5rem;
-    padding-right: 5rem;
+.hero {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "container2" "container1";
+  gap: 2rem;
+  place-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media only screen and (min-width: 64em) {
+  .hero {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "container1 container2";
+    height: 100vh;
   }
+}
+
+.hero__container1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: container1;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.hero__container1 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.hero__container1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: container2;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 /*# sourceMappingURL=style.css.map */
