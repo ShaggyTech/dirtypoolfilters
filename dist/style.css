@@ -465,7 +465,20 @@ img {
 }
 
 .hero__container1 img {
-  width: 100%;
+  height: clamp(80vh, 100vh, 50rem);
+  width: auto;
+}
+
+@media only screen and (min-width: 40em) {
+  .hero__container1 img {
+    padding: 4rem;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .hero__container1 img {
+    padding: 1rem;
+  }
 }
 
 .hero__container1 {

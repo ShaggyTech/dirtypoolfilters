@@ -27,7 +27,16 @@
     place-content: center;
 
     img {
-      width: 100%;
+      height: clamp(80vh, 100vh, 50rem);
+      width: auto;
+
+      @include breakpoint-up(medium) {
+        padding: 4rem;
+      }
+
+      @include breakpoint-up(large) {
+        padding: 1rem;
+      }
     }
   }
 
