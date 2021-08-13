@@ -23,3 +23,36 @@ $breakpoints-down: (
     @content;
   }
 }
+
+@mixin button__cta {
+  position: relative;
+  text-align: center;
+  width: 50%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding: 1rem 0px;
+  background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
+  border: 2px solid $clr-white;
+  border-radius: 10px;
+  overflow: hidden;
+  will-change: opacity;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    transform: scale(0, 0);
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover::before {
+    box-shadow: $box-shadow;
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
