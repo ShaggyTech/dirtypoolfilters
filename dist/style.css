@@ -74,6 +74,10 @@ img {
   margin: 0 auto;
 }
 
+.main {
+  background-color: #468faf;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,7 +325,7 @@ img {
   transition: opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, opacity 300ms ease-in-out;
   transition: transform 250ms ease-in-out, opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
-  will-change: transform opacity;
+  will-change: transform, opacity;
 }
 
 .header .nav-bar__links .nav-link:first-child {
@@ -419,11 +423,6 @@ img {
           transform: scale(1, 1);
 }
 
-.main {
-  background-color: #468faf;
-}
-
-/** Hero Section **/
 .hero {
   display: -ms-grid;
   display: grid;
@@ -438,6 +437,7 @@ img {
   padding-right: 1.5rem;
   padding-top: 3rem;
   padding-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 40em) {
@@ -469,28 +469,37 @@ img {
       align-content: center;
   font-size: 2rem;
   text-align: center;
+  margin: 3rem auto;
+}
+
+@media only screen and (min-width: 40em) {
+  .hero__container1 {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (min-width: 64em) {
   .hero__container1 {
     text-align: left;
+    margin-bottom: 0;
+    font-size: 3rem;
   }
 }
 
 .hero__container1 span {
+  margin-bottom: 4rem;
   font-style: italic;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
 }
 
 .hero__container1 h1 {
-  margin-bottom: 3rem;
-  font-size: 40px;
+  margin-bottom: 4rem;
   font-weight: 800;
 }
 
 .hero__container1 p {
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
+  font-weight: 600;
 }
 
 .hero__container1 button {
@@ -498,19 +507,30 @@ img {
   text-align: center;
   width: auto;
   margin: 0 auto;
-  padding: 1.2rem;
+  padding: 1.2rem 3rem;
   background-image: -webkit-gradient(linear, left top, right top, from(#014d84), to(#468faf));
   background-image: linear-gradient(to right, #014d84, #468faf);
-  border: 2px solid #014a7e;
+  border: 2px solid #014d84;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   overflow: hidden;
-  will-change: opacity;
+  cursor: pointer;
+  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  will-change: opacity, transform;
 }
 
 @media only screen and (min-width: 40em) {
   .hero__container1 button {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .hero__container1 button {
+    font-size: 2.2rem;
   }
 }
 
@@ -521,12 +541,14 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 77, 132, 0.5);
   opacity: 0;
   -webkit-transform: scale(0, 0);
           transform: scale(0, 0);
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
 }
 
 .hero__container1 button:hover::before {
@@ -551,8 +573,8 @@ img {
 }
 
 .hero__container2 img {
-  height: 35rem;
-  width: auto;
+  width: 100vw;
+  max-height: 100vh;
 }
 
 @media only screen and (min-width: 40em) {
@@ -567,17 +589,15 @@ img {
   }
 }
 
-/** END Hero Section **/
-/** Services Section **/
 .services {
   display: -ms-grid;
   display: grid;
+  grid-auto-flow: row;
   gap: 3rem;
   place-content: center;
   place-items: center;
   text-align: center;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin: 10rem auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -590,13 +610,14 @@ img {
 }
 
 .services__card {
-  height: 54rem;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
+  min-height: 60rem;
   width: 80vw;
-  max-width: 40rem;
+  max-width: 50rem;
   padding: 1.5rem;
-  background: linear-gradient(45deg, #2b6f97 0%, #014a7e 50%, #012b4b 100%);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  background: linear-gradient(45deg, #014d84 0%, #012b4b 50%, #014a7e 100%);
   border-radius: 1rem;
   cursor: default;
 }
@@ -617,11 +638,12 @@ img {
 .services__card h3 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .services__card h4 {
   font-size: 4.5rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #319b6d;
 }
 
@@ -633,7 +655,7 @@ img {
 
 .services__card ul {
   margin: 3rem 0px 3rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -641,13 +663,14 @@ img {
   margin-bottom: 0.8rem;
 }
 
-.services__card button {
-  width: 80%;
-  font-size: 2rem;
+.services__card a > button {
+  width: auto;
+  max-width: 90%;
+  font-size: 1.8rem;
   font-weight: 600;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 2rem;
   color: #012b4b;
 }
-
-/** END Services Section **/
 /*# sourceMappingURL=style.css.map */

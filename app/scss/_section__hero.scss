@@ -1,0 +1,132 @@
+.hero {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "container1"
+    "container2";
+  gap: 2rem;
+  height: 100%;
+  background-color: $clr-white;
+  color: $clr-black;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  margin-bottom: 3rem;
+
+  @include breakpoint-up(medium) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include breakpoint-up(large) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "container1 container2";
+    height: 100vh;
+  }
+
+  &__container1 {
+    grid-area: container1;
+    display: grid;
+    place-content: center;
+    align-content: center;
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem auto;
+
+    @include breakpoint-up(medium) {
+      font-size: 2.5rem;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      margin-bottom: 0;
+      font-size: 3rem;
+    }
+
+    span {
+      margin-bottom: 4rem;
+      font-style: italic;
+      font-size: 3rem;
+    }
+
+    h1 {
+      margin-bottom: 4rem;
+      font-weight: 800;
+    }
+
+    p {
+      margin-bottom: 8rem;
+      font-weight: 600;
+    }
+
+    button {
+      $transition: transform 200ms ease-in-out,opacity 200ms ease-in-out;
+
+      position: relative;
+      text-align: center;
+      width: auto;
+      margin: 0 auto;
+      padding: 1.2rem 3rem;
+      background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
+      border: 2px solid $clr-blue;
+      border-radius: 10px;
+      font-size: 1.8rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: $transition;
+      will-change: opacity, transform;
+
+      @include breakpoint-up(medium) {
+        font-size: 2rem;
+      }
+
+      @include breakpoint-up(large) {
+        font-size: 2.2rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($clr-blue, 0.5);
+        opacity: 0;
+        transform: scale(0, 0);
+        transition: $transition;
+      }
+
+      &:hover::before {
+        box-shadow: $box-shadow;
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      a {
+        position: relative;
+      }
+    }
+  }
+
+  &__container2 {
+    grid-area: container2;
+    display: grid;
+    place-content: center;
+
+    img {
+      width: 100vw;
+      max-height: 100vh;
+
+      @include breakpoint-up(medium) {
+        padding: 4rem;
+      }
+
+      @include breakpoint-up(large) {
+        padding: 1rem;
+      }
+    }
+  }
+}
