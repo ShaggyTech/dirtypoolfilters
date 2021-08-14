@@ -1,7 +1,5 @@
-$header-height: 6rem;
-$header-height-desktop: 7rem;
-$box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-  rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+$header-height: 7rem;
+$header-height-desktop: 9rem;
 
 .header {
   position: sticky;
@@ -192,43 +190,23 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
     }
 
     &__cta {
-      position: relative;
-      text-align: center;
       width: 50%;
       margin-top: 1rem;
       margin-bottom: 3rem;
-      padding: 1rem 0px;
-      background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
+      padding: 1rem 1.3rem;
       border: 2px solid $clr-white;
       border-radius: 10px;
-      opacity: 0;
-      overflow: hidden;
-      will-change: opacity;
+
+      @include breakpoint-up(medium) {
+        width: 33%;
+        padding: 1rem 1.4rem;
+      }
 
       @include breakpoint-up(large) {
         width: 16rem;
         margin: 0 auto;
         border-radius: 30px;
         opacity: 1;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(255, 255, 255, 0.25);
-        opacity: 0;
-        transform: scale(0, 0);
-        transition: opacity 200ms ease-in-out;
-      }
-
-      &:hover::before {
-        box-shadow: $box-shadow;
-        opacity: 1;
-        transform: scale(1, 1);
       }
     }
   }

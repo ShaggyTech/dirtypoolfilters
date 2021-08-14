@@ -17,10 +17,10 @@
   &__card {
     display: grid;
     grid-auto-flow: row;
-    min-height: 60rem;
-    width: 80vw;
-    max-width: 50rem;
-    padding: 1.5rem;
+    min-height: 63rem;
+    width: 75vw;
+    max-width: 40rem;
+    padding: 2rem 1.5rem;
     background: linear-gradient(
       45deg,
       $clr-blue 0%,
@@ -28,6 +28,7 @@
       $clr-blue-darken1 100%
     );
     border-radius: 1rem;
+    box-shadow: $box-shadow;
     cursor: default;
 
     @include breakpoint-up(large) {
@@ -69,15 +70,22 @@
       }
     }
 
+    a {
+      position: relative;
+      margin: 0 auto;
+    }
+
     a > button {
       width: auto;
-      max-width: 90%;
       margin-top: 2rem;
-      margin-bottom: 2rem;
-      padding: 0.5rem 2rem;
+      margin-bottom: 3rem;
+      padding: 1rem 3rem;
       font-size: 1.8rem;
       font-weight: 600;
-      color: $clr-blue-darken3;
+      color: $clr-white;
+      border-radius: 1rem;
+      box-shadow: $box-shadow;
+      background: $clr-green;
     }
   }
 }

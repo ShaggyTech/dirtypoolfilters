@@ -1,18 +1,26 @@
-.contact form {
+.contact {
+  padding: 3rem;
+  background: $clr-gray;
+}
+
+.contact .form {
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   display: grid;
   margin: 0 auto;
-  max-width: 60rem;
-  padding: 1.5rem;
+  max-width: min(40rem, 100%);
   font-size: 4rem;
 
   fieldset {
-    background-color: $clr-blue-darken3;
     border: none;
+  }
+
+  fieldset .fields-wrapper {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: $clr-blue-darken3;
     border-radius: $border-radius;
-    margin-bottom: 0.5rem;
-    padding: 1.2rem 0rem;
 
     @include breakpoint-up(small) {
       padding: 1.2rem 2rem;
@@ -21,9 +29,8 @@
     legend {
       background-color: $clr-blue-darken1;
       border-radius: $border-radius $border-radius 0 0;
-      font-family: "Roboto Mono", monospace;
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 2.5rem;
+      font-weight: 600;
       letter-spacing: 0.8px;
       padding: 0.5rem;
       text-align: center;
@@ -38,36 +45,11 @@
       display: grid;
       font-size: 1rem;
       grid: auto-fill / 1fr;
-      padding: 0.5rem 1.2rem;
       width: 100%;
 
       &__title {
         font-size: 1.2rem;
         margin: 0.5rem 0;
-      }
-
-      .check-group {
-        display: grid;
-        font-size: 1.2rem;
-        gap: 0.8rem;
-        grid: 1fr / 0fr auto;
-        padding: 0.2rem 0;
-        padding-left: 0.8rem;
-
-        input:not(:checked) {
-        }
-
-        label:hover {
-          color: $clr-secondary-light;
-        }
-
-        input:checked {
-          color: $clr-green;
-
-          ~ label:not(:hover) {
-            color: $clr-green;
-          }
-        }
       }
     }
   }
@@ -76,7 +58,6 @@
     background-color: $clr-green;
     border-radius: $border-radius;
     color: $clr-white;
-    font-family: "Roboto Mono", monospace;
     font-size: 1.2rem;
     font-weight: bold;
   }

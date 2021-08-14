@@ -59,23 +59,17 @@
       font-weight: 600;
     }
 
-    a > button {
-      $transition: transform 200ms ease-in-out, opacity 300ms ease-in-out;
-
+    a {
       position: relative;
-      width: auto;
       margin: 0 auto;
+    }
+
+    a > button {
+      width: auto;
       padding: 1.2rem 3rem;
-      background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
-      border: 2px solid $clr-blue;
-      border-radius: 10px;
-      text-align: center;
-      color: $clr-white;
       font-size: 1.8rem;
-      overflow: hidden;
-      cursor: pointer;
-      transition: $transition;
-      will-change: opacity, transform;
+      border-radius: 10px;
+      box-shadow: $box-shadow;
 
       @include breakpoint-up(medium) {
         font-size: 2rem;
@@ -83,29 +77,6 @@
 
       @include breakpoint-up(large) {
         font-size: 2.2rem;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(255, 255, 255, 0.25);
-        opacity: 0;
-        transform: scale(0, 1);
-        transition: $transition;
-      }
-
-      &:hover::before {
-        box-shadow: $box-shadow;
-        opacity: 1;
-        transform: scale(1, 1);
-      }
-
-      a {
-        position: relative;
       }
     }
   }
