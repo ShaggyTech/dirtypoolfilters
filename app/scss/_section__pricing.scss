@@ -1,4 +1,4 @@
-.services {
+.pricing {
   display: grid;
   grid-auto-flow: row;
   gap: 3rem;
@@ -42,8 +42,8 @@
     }
 
     h3 {
-      font-size: 2.5rem;
       margin-bottom: 0.5rem;
+      font-size: 2.5rem;
       font-weight: 600;
     }
 
@@ -54,9 +54,9 @@
     }
 
     p {
-      font-style: italic;
-      font-size: 1.4rem;
       margin-bottom: 2.4rem;
+      font-size: 1.4rem;
+      font-style: italic;
     }
 
     ul {
@@ -72,11 +72,11 @@
     a > button {
       width: auto;
       max-width: 90%;
-      font-size: 1.8rem;
-      font-weight: 600;
       margin-top: 2rem;
       margin-bottom: 2rem;
       padding: 0.5rem 2rem;
+      font-size: 1.8rem;
+      font-weight: 600;
       color: $clr-blue-darken3;
     }
   }

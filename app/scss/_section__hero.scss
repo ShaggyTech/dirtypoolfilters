@@ -6,13 +6,10 @@
     "container2";
   gap: 2rem;
   height: 100%;
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  margin-bottom: 3rem;
   background-color: $clr-white;
   color: $clr-black;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-  margin-bottom: 3rem;
 
   @include breakpoint-up(medium) {
     padding-left: 4rem;
@@ -23,7 +20,7 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "container1 container2";
-    height: 100vh;
+    height: auto;
   }
 
   &__container1 {
@@ -31,24 +28,24 @@
     display: grid;
     place-content: center;
     align-content: center;
+    margin: 3rem auto;
     font-size: 2rem;
     text-align: center;
-    margin: 3rem auto;
 
     @include breakpoint-up(medium) {
       font-size: 2.5rem;
     }
 
     @include breakpoint-up(large) {
-      text-align: left;
-      margin-bottom: 0;
+      margin-bottom: 0px;
       font-size: 3rem;
+      text-align: left;
     }
 
     span {
       margin-bottom: 4rem;
-      font-style: italic;
       font-size: 3rem;
+      font-style: italic;
     }
 
     h1 {
@@ -58,20 +55,22 @@
 
     p {
       margin-bottom: 8rem;
+      font-size: 2rem;
       font-weight: 600;
     }
 
-    button {
-      $transition: transform 200ms ease-in-out,opacity 200ms ease-in-out;
+    a > button {
+      $transition: transform 200ms ease-in-out, opacity 300ms ease-in-out;
 
       position: relative;
-      text-align: center;
       width: auto;
       margin: 0 auto;
       padding: 1.2rem 3rem;
       background-image: linear-gradient(to right, $clr-blue, $clr-light-blue);
       border: 2px solid $clr-blue;
       border-radius: 10px;
+      text-align: center;
+      color: $clr-white;
       font-size: 1.8rem;
       overflow: hidden;
       cursor: pointer;
@@ -93,9 +92,9 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba($clr-blue, 0.5);
+        background-color: rgba(255, 255, 255, 0.25);
         opacity: 0;
-        transform: scale(0, 0);
+        transform: scale(0, 1);
         transition: $transition;
       }
 

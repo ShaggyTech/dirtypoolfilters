@@ -1,8 +1,10 @@
 /*   color variables */
 $clr-bg: #1b1b32;
-$clr-bg-light: #424375;
-$clr-primary: #18ffff;
-$clr-primary-light: #adffff;
+$clr-primary: hsl(239, 28%, 25%);
+$clr-primary-light: hsl(239, 29%, 45%);
+$clr-primary-dark: hsl(239, 30%, 15%);
+$clr-secondary: hsl(180, 100%, 40%);
+$clr-secondary-light: hsl(180, 100%, 80%);
 
 $clr-white: hsl(0, 25%, 98%);
 $clr-black: hsl(0, 100%, 0%);

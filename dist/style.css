@@ -431,13 +431,10 @@ img {
       grid-template-areas: "container1" "container2";
   gap: 2rem;
   height: 100%;
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  margin-bottom: 3rem;
   background-color: #fbf9f9;
   color: black;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-  margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 40em) {
@@ -454,7 +451,7 @@ img {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "container1 container2";
-    height: 100vh;
+    height: auto;
   }
 }
 
@@ -467,9 +464,9 @@ img {
   place-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin: 3rem auto;
   font-size: 2rem;
   text-align: center;
-  margin: 3rem auto;
 }
 
 @media only screen and (min-width: 40em) {
@@ -480,16 +477,16 @@ img {
 
 @media only screen and (min-width: 64em) {
   .hero__container1 {
-    text-align: left;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     font-size: 3rem;
+    text-align: left;
   }
 }
 
 .hero__container1 span {
   margin-bottom: 4rem;
-  font-style: italic;
   font-size: 3rem;
+  font-style: italic;
 }
 
 .hero__container1 h1 {
@@ -499,12 +496,12 @@ img {
 
 .hero__container1 p {
   margin-bottom: 8rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
-.hero__container1 button {
+.hero__container1 a > button {
   position: relative;
-  text-align: center;
   width: auto;
   margin: 0 auto;
   padding: 1.2rem 3rem;
@@ -512,46 +509,48 @@ img {
   background-image: linear-gradient(to right, #014d84, #468faf);
   border: 2px solid #014d84;
   border-radius: 10px;
+  text-align: center;
+  color: #fbf9f9;
   font-size: 1.8rem;
   overflow: hidden;
   cursor: pointer;
-  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
-  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  -webkit-transition: opacity 300ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: opacity 300ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 300ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 300ms ease-in-out, -webkit-transform 200ms ease-in-out;
   will-change: opacity, transform;
 }
 
 @media only screen and (min-width: 40em) {
-  .hero__container1 button {
+  .hero__container1 a > button {
     font-size: 2rem;
   }
 }
 
 @media only screen and (min-width: 64em) {
-  .hero__container1 button {
+  .hero__container1 a > button {
     font-size: 2.2rem;
   }
 }
 
-.hero__container1 button::before {
+.hero__container1 a > button::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(1, 77, 132, 0.5);
+  background-color: rgba(255, 255, 255, 0.25);
   opacity: 0;
-  -webkit-transform: scale(0, 0);
-          transform: scale(0, 0);
-  -webkit-transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
-  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: opacity 300ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: opacity 300ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 300ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 300ms ease-in-out, -webkit-transform 200ms ease-in-out;
 }
 
-.hero__container1 button:hover::before {
+.hero__container1 a > button:hover::before {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   opacity: 1;
@@ -559,7 +558,7 @@ img {
           transform: scale(1, 1);
 }
 
-.hero__container1 button a {
+.hero__container1 a > button a {
   position: relative;
 }
 
@@ -589,7 +588,7 @@ img {
   }
 }
 
-.services {
+.pricing {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: row;
@@ -603,13 +602,13 @@ img {
 }
 
 @media only screen and (min-width: 64em) {
-  .services {
+  .pricing {
     grid-auto-flow: column;
     gap: 5rem;
   }
 }
 
-.services__card {
+.pricing__card {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: row;
@@ -623,54 +622,143 @@ img {
 }
 
 @media only screen and (min-width: 64em) {
-  .services__card {
+  .pricing__card {
     width: 28vw;
     max-width: 35rem;
   }
 }
 
-.services__card img {
+.pricing__card img {
   height: 7.5rem;
   width: 7.5rem;
   margin: 3rem auto;
 }
 
-.services__card h3 {
-  font-size: 2.5rem;
+.pricing__card h3 {
   margin-bottom: 0.5rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
-.services__card h4 {
+.pricing__card h4 {
   font-size: 4.5rem;
   font-weight: 800;
   color: #319b6d;
 }
 
-.services__card p {
-  font-style: italic;
-  font-size: 1.4rem;
+.pricing__card p {
   margin-bottom: 2.4rem;
+  font-size: 1.4rem;
+  font-style: italic;
 }
 
-.services__card ul {
+.pricing__card ul {
   margin: 3rem 0px 3rem;
   font-size: 2rem;
   font-weight: 600;
 }
 
-.services__card ul li:not(:last-child) {
+.pricing__card ul li:not(:last-child) {
   margin-bottom: 0.8rem;
 }
 
-.services__card a > button {
+.pricing__card a > button {
   width: auto;
   max-width: 90%;
-  font-size: 1.8rem;
-  font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 0.5rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   color: #012b4b;
+}
+
+.contact form {
+  border-radius: 0.5rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 1.5rem;
+  font-size: 4rem;
+}
+
+.contact form fieldset {
+  background-color: #012b4b;
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1.2rem 0rem;
+}
+
+@media only screen and (min-width: null) {
+  .contact form fieldset {
+    padding: 1.2rem 2rem;
+  }
+}
+
+.contact form fieldset legend {
+  background-color: #014a7e;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  padding: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media only screen and (min-width: null) {
+  .contact form fieldset legend {
+    font-size: 1.8rem;
+  }
+}
+
+.contact form fieldset .form-group {
+  display: -ms-grid;
+  display: grid;
+  font-size: 1rem;
+  grid: auto-fill / 1fr;
+  padding: 0.5rem 1.2rem;
+  width: 100%;
+}
+
+.contact form fieldset .form-group__title {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.contact form fieldset .form-group .check-group {
+  display: -ms-grid;
+  display: grid;
+  font-size: 1.2rem;
+  gap: 0.8rem;
+  grid: 1fr / 0fr auto;
+  padding: 0.2rem 0;
+  padding-left: 0.8rem;
+}
+
+.contact form fieldset .form-group .check-group label:hover {
+  color: #99ffff;
+}
+
+.contact form fieldset .form-group .check-group input:checked {
+  color: #319b6d;
+}
+
+.contact form fieldset .form-group .check-group input:checked ~ label:not(:hover) {
+  color: #319b6d;
+}
+
+.contact form #submit {
+  background-color: #319b6d;
+  border-radius: 0.5rem;
+  color: #fbf9f9;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
