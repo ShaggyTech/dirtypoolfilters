@@ -1,64 +1,87 @@
 .contact {
-  padding: 3rem;
-  background: $clr-gray;
-}
-
-.contact .form {
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
   display: grid;
-  margin: 0 auto;
-  max-width: min(40rem, 100%);
-  font-size: 4rem;
+  place-content: center;
+  padding: 10rem 0rem;
+  background-color: $clr-blue-darken1;
 
-  fieldset {
-    border: none;
-  }
-
-  fieldset .fields-wrapper {
+  .form {
     display: grid;
-    gap: 1rem;
-    padding: 2rem;
-    background-color: $clr-blue-darken3;
-    border-radius: $border-radius;
+    gap: 3rem;
+    min-width: calc(min(66rem, 88vw));
+    box-shadow: $box-shadow;
 
-    @include breakpoint-up(small) {
-      padding: 1.2rem 2rem;
+    fieldset {
+      border: none;
     }
 
     legend {
-      background-color: $clr-blue-darken1;
-      border-radius: $border-radius $border-radius 0 0;
-      font-size: 2.5rem;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      padding: 0.5rem;
-      text-align: center;
-      width: 100%;
-
-      @include breakpoint-up(small) {
-        font-size: 1.8rem;
-      }
-    }
-
-    .form-group {
       display: grid;
-      font-size: 1rem;
-      grid: auto-fill / 1fr;
+      place-content: center;
+      padding: 3.2rem 1.2rem;
+      height: 6rem;
       width: 100%;
+      background-color: $clr-blue-darken2;
+      border-bottom: 6px solid $clr-purple;
+      border-radius: $border-radius $border-radius 0px 0px;
+      box-shadow: $box-shadow;
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
 
-      &__title {
-        font-size: 1.2rem;
-        margin: 0.5rem 0;
+      @include breakpoint-up(medium) {
+        font-size: 3rem;
       }
     }
-  }
 
-  #submit {
-    background-color: $clr-green;
-    border-radius: $border-radius;
-    color: $clr-white;
-    font-size: 1.2rem;
-    font-weight: bold;
+    .fields-wrapper {
+      display: grid;
+      gap: 2rem;
+      padding: 4rem 2.5rem;
+      background-color: $clr-blue-darken3;
+      border: 25px solid $clr-blue-darken2;
+      border-radius: 0px 0px $border-radius $border-radius;
+      box-shadow: $box-shadow;
+
+      @include breakpoint-up(medium) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+
+      @include breakpoint-up(large) {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+
+      .form-group {
+        display: grid;
+        grid: auto-fill / 1fr;
+        gap: 0.4rem;
+        width: 100%;
+        font-size: 1.2rem;
+
+        label,
+        input,
+        select,
+        textarea {
+          padding: 0.25rem 0.5rem;
+          font-size: 1.5rem;
+        }
+
+        select {
+          padding: 0.4rem 0.5rem;
+        }
+      }
+    }
+
+    #submit {
+      margin-top: 3rem;
+      padding: 0.8rem;
+      border-radius: $border-radius;
+      background-color: $clr-green;
+      color: $clr-white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
   }
 }

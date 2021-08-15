@@ -130,13 +130,11 @@
           >
         </article>
       </section>
-      <section id="services"></section>
-      <section id="about"></section>
       <section id="contact" class="contact">
         <form id="form" class="form">
           <fieldset>
+            <legend>Contact Us</legend>
             <div class="fields-wrapper">
-              <legend>Contact Us</legend>
               <div class="form-group">
                 <label for="name-first" id="name-label">First Name</label>
                 <input
@@ -170,19 +168,27 @@
               <div class="form-group">
                 <label for="zipcode">Zipcode</label>
                 <input
-                  type="number"
+                  type="text"
                   id="zipcode"
                   placeholder="Zipcode"
                   required
                 />
               </div>
               <div class="form-group">
-                <label for="state">State</label>
-                <input type="text" id="state" placeholder="State" required />
-              </div>
-              <div class="form-group">
                 <label for="county">County</label>
-                <input type="text" id="county" placeholder="County" required />
+                <select name="county" id="county" required>
+                  <option hidden disabled selected="selected" value="">
+                    County
+                  </option>
+                  <option value="student">Dallas</option>
+                  <option value="other">Denton</option>
+                  <option value="other">Ellis</option>
+                  <option value="other">Hood</option>
+                  <option value="other">Johson</option>
+                  <option value="learner">Parker</option>
+                  <option value="job">Tarrant</option>
+                  <option value="preferNo">Wise</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="comments" class="form-group__title"
@@ -201,25 +207,20 @@
           </fieldset>
         </form>
       </section>
-      <section>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta officia,
-        voluptate commodi sint nesciunt labore, blanditiis autem voluptatum
-        veritatis modi nulla maiores exercitationem quidem repudiandae corrupti
-        tempora error laboriosam fugiat. Labore saepe corrupti optio iste minima
-        culpa. Veritatis quam eius veniam nam assumenda alias illum mollitia
-        inventore, odio corrupti, officiis excepturi repudiandae porro est
-        itaque ab obcaecati? Saepe, eos quidem? Cumque veritatis deleniti
-        blanditiis, dolorum, laborum voluptatem quibusdam consequatur delectus
-        optio repudiandae facilis excepturi qui ex eveniet. Fugiat obcaecati
-        assumenda ratione distinctio. Laboriosam facere sequi veritatis
-        architecto, vel facilis earum. Eum adipisci quae animi reprehenderit
-        laboriosam quos voluptatem pariatur fugit, totam eveniet fuga asperiores
-        beatae. Est possimus molestiae ipsa, quibusdam deserunt delectus
-        doloribus quasi eligendi sunt aliquam quo deleniti ea. Accusantium,
-        cupiditate dolor natus excepturi voluptatum vero minima asperiores
-        adipisci laborum eligendi quidem, labore recusandae sapiente repellat
-        est earum fugit minus vitae atque? Quae nulla id, dolorem est ad
-        aliquid?
+      <section id="services">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam beatae
+        nemo corrupti reiciendis provident! Provident maxime saepe ipsa libero
+        in omnis neque laboriosam optio vitae, corrupti consectetur eius, fuga
+        sunt?
+      </section>
+      <section id="about">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse amet dicta
+        aliquid quis numquam delectus suscipit ipsa, exercitationem perferendis
+        veritatis illo itaque quisquam consectetur a maxime deserunt fugit, eos
+        sint! Quibusdam consequuntur facilis fuga illo id voluptatum deserunt
+        quae officiis, reprehenderit, explicabo dolorem aut, facere quas labore
+        voluptatem necessitatibus aliquam ratione similique. Laboriosam facilis
+        atque nemo ipsa veniam similique ex.
       </section>
     </main>
     <footer id="footer" class="container">
