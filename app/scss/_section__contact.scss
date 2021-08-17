@@ -1,7 +1,7 @@
 .contact {
   display: grid;
   place-content: center;
-  padding: 10rem 0rem;
+  padding: 8rem 0rem;
   background-color: $clr-blue-darken1;
 
   .form {
@@ -18,10 +18,10 @@
       display: grid;
       place-content: center;
       padding: 3.2rem 1.2rem;
-      height: 6rem;
+      height: 10rem;
       width: 100%;
       background-color: $clr-blue-darken2;
-      border-bottom: 6px solid $clr-purple;
+      border-bottom: 10px solid $clr-purple;
       border-radius: $border-radius $border-radius 0px 0px;
       box-shadow: $box-shadow;
       font-size: 2.6rem;
@@ -36,8 +36,8 @@
 
     .fields-wrapper {
       display: grid;
-      gap: 2rem;
-      padding: 4rem 2.5rem;
+      gap: 1.8rem;
+      padding: 4rem 2rem;
       background-color: $clr-blue-darken3;
       border: 25px solid $clr-blue-darken2;
       border-radius: 0px 0px $border-radius $border-radius;
@@ -66,6 +66,7 @@
         textarea {
           padding: 0.25rem 0.5rem;
           font-size: 1.5rem;
+          border-radius: $border-radius;
         }
 
         select {
