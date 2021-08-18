@@ -248,6 +248,7 @@ img {
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-size: 1.5rem;
+  height: 7rem;
   width: 100%;
   z-index: 999;
 }
@@ -259,6 +260,7 @@ img {
     -ms-grid-rows: 9rem;
         grid-template-rows: 9rem;
         grid-template-areas: ". nav-logo nav-bar .";
+    height: 9rem;
   }
 }
 
@@ -371,7 +373,7 @@ img {
   transition: transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
   will-change: transform;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 @media only screen and (min-width: 64em) {
@@ -391,7 +393,7 @@ img {
     transition: none;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
-    overflow-y: initial;
+    overflow: initial;
   }
 }
 

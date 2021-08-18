@@ -15,6 +15,7 @@ $header-height-desktop: 9rem;
   background-color: $clr-blue-darken3;
   box-shadow: $box-shadow;
   font-size: 1.5rem;
+  height: $header-height;
   width: 100%;
   z-index: 999;
 
@@ -22,6 +23,7 @@ $header-height-desktop: 9rem;
     grid-template-columns: 1fr 6fr 6fr 1fr;
     grid-template-rows: $header-height-desktop;
     grid-template-areas: ". nav-logo nav-bar .";
+    height: $header-height-desktop;
   }
 
   &__logo {
@@ -107,7 +109,7 @@ $header-height-desktop: 9rem;
     transform-origin: top;
     transition: transform 400ms ease-in-out;
     will-change: transform;
-    overflow-y: scroll;
+    overflow: scroll;
 
     @include breakpoint-up(large) {
       height: $header-height-desktop;
@@ -120,7 +122,7 @@ $header-height-desktop: 9rem;
       border: none;
       transition: none;
       transform: scale(1, 1);
-      overflow-y: initial;
+      overflow: initial;
     }
 
     &__links {
