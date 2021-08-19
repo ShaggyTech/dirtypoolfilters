@@ -12,77 +12,77 @@
 
     fieldset {
       border: none;
-    }
+      padding: 0;
 
-    legend {
-      display: grid;
-      place-content: center;
-      padding: 3.2rem 1.2rem;
-      height: 10rem;
-      width: 100%;
-      background-color: $clr-blue-darken2;
-      border-bottom: 10px solid $clr-purple;
-      border-radius: $border-radius $border-radius 0px 0px;
-      box-shadow: $box-shadow;
-      font-size: 2.6rem;
-      font-weight: 600;
-      text-align: center;
-      text-transform: uppercase;
-
-      @include breakpoint-up(medium) {
-        font-size: 3rem;
-      }
-    }
-
-    .fields-wrapper {
-      display: grid;
-      gap: 1.8rem;
-      padding: 4rem 2rem;
-      background-color: $clr-blue-darken3;
-      border: 25px solid $clr-blue-darken2;
-      border-radius: 0px 0px $border-radius $border-radius;
-      box-shadow: $box-shadow;
-
-      @include breakpoint-up(medium) {
-        padding-left: 4rem;
-        padding-right: 4rem;
-      }
-
-      @include breakpoint-up(large) {
-        padding-left: 6rem;
-        padding-right: 6rem;
-      }
-
-      .form-group {
+      legend {
         display: grid;
-        grid: auto-fill / 1fr;
-        gap: 0.4rem;
+        place-content: center;
+        padding: 3.2rem 1.2rem;
+        height: 10rem;
         width: 100%;
-        font-size: 1.2rem;
+        background-color: $clr-blue-darken2;
+        border-bottom: 10px solid $clr-purple;
+        border-radius: $border-radius $border-radius 0px 0px;
+        font-size: 2.6rem;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
 
-        label,
-        input,
-        select,
-        textarea {
-          padding: 0.25rem 0.5rem;
-          font-size: 1.5rem;
-          border-radius: $border-radius;
+        @include breakpoint-up(medium) {
+          font-size: 3rem;
+        }
+      }
+
+      .fields-wrapper {
+        display: grid;
+        gap: 1.8rem;
+        padding: 4rem 2rem;
+        background-color: $clr-blue-darken3;
+        border: 25px solid $clr-blue-darken1;
+
+        @include breakpoint-up(medium) {
+          padding-left: 3rem;
+          padding-right: 3rem;
         }
 
-        select {
-          padding: 0.4rem 0.5rem;
+        @include breakpoint-up(large) {
+          padding-left: 5rem;
+          padding-right: 5rem;
+        }
+
+        .form-group {
+          display: grid;
+          grid: auto-fill / 1fr;
+          gap: 0.4rem;
+          width: 100%;
+          font-size: 1.2rem;
+
+          label,
+          input,
+          select,
+          textarea {
+            padding: 0.25rem 0.5rem;
+            font-size: 1.5rem;
+            border-radius: $border-radius;
+          }
+
+          select {
+            padding: 0.4rem 0.5rem;
+          }
         }
       }
     }
 
     #submit {
-      margin-top: 3rem;
+      margin: 0rem auto 2rem;
+      width: 80%;
       padding: 0.8rem;
       border-radius: $border-radius;
       background-color: $clr-green;
       color: $clr-white;
       font-size: 1.8rem;
       font-weight: bold;
+      text-transform: uppercase;
     }
   }
 }

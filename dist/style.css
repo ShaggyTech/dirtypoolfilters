@@ -776,9 +776,10 @@ img {
 
 .contact .form fieldset {
   border: none;
+  padding: 0;
 }
 
-.contact .form legend {
+.contact .form fieldset legend {
   display: -ms-grid;
   display: grid;
   place-content: center;
@@ -788,8 +789,6 @@ img {
   background-color: #013b65;
   border-bottom: 10px solid #8a426d;
   border-radius: 0.5rem 0.5rem 0px 0px;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-size: 2.6rem;
   font-weight: 600;
   text-align: center;
@@ -797,38 +796,35 @@ img {
 }
 
 @media only screen and (min-width: 40em) {
-  .contact .form legend {
+  .contact .form fieldset legend {
     font-size: 3rem;
   }
 }
 
-.contact .form .fields-wrapper {
+.contact .form fieldset .fields-wrapper {
   display: -ms-grid;
   display: grid;
   gap: 1.8rem;
   padding: 4rem 2rem;
   background-color: #012b4b;
-  border: 25px solid #013b65;
-  border-radius: 0px 0px 0.5rem 0.5rem;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border: 25px solid #014a7e;
 }
 
 @media only screen and (min-width: 40em) {
-  .contact .form .fields-wrapper {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  .contact .form fieldset .fields-wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media only screen and (min-width: 64em) {
-  .contact .form .fields-wrapper {
-    padding-left: 6rem;
-    padding-right: 6rem;
+  .contact .form fieldset .fields-wrapper {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
-.contact .form .fields-wrapper .form-group {
+.contact .form fieldset .fields-wrapper .form-group {
   display: -ms-grid;
   display: grid;
   grid: auto-fill / 1fr;
@@ -837,26 +833,28 @@ img {
   font-size: 1.2rem;
 }
 
-.contact .form .fields-wrapper .form-group label,
-.contact .form .fields-wrapper .form-group input,
-.contact .form .fields-wrapper .form-group select,
-.contact .form .fields-wrapper .form-group textarea {
+.contact .form fieldset .fields-wrapper .form-group label,
+.contact .form fieldset .fields-wrapper .form-group input,
+.contact .form fieldset .fields-wrapper .form-group select,
+.contact .form fieldset .fields-wrapper .form-group textarea {
   padding: 0.25rem 0.5rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
 }
 
-.contact .form .fields-wrapper .form-group select {
+.contact .form fieldset .fields-wrapper .form-group select {
   padding: 0.4rem 0.5rem;
 }
 
 .contact .form #submit {
-  margin-top: 3rem;
+  margin: 0rem auto 2rem;
+  width: 80%;
   padding: 0.8rem;
   border-radius: 0.5rem;
   background-color: #1f9864;
   color: #fbf9f9;
   font-size: 1.8rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
