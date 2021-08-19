@@ -1,9 +1,10 @@
-$header-height: 7rem;
+$header-height: 5.6rem;
 $header-height-desktop: 9rem;
 
 .header {
   position: sticky;
   top: 0;
+  left: 0;
   display: grid;
   grid-template-columns: 1.5rem 6fr 1fr 1.5rem;
   grid-template-rows: $header-height auto;
@@ -12,11 +13,12 @@ $header-height-desktop: 9rem;
     "nav-bar nav-bar nav-bar nav-bar";
   justify-content: center;
   align-items: center;
+  height: $header-height;
+  width: 100%;
   background-color: $clr-blue-darken3;
   box-shadow: $box-shadow;
   font-size: 1.5rem;
-  height: $header-height;
-  width: 100%;
+  overflow: visible;
   z-index: 999;
 
   @include breakpoint-up(large) {
@@ -27,10 +29,12 @@ $header-height-desktop: 9rem;
   }
 
   &__logo {
+    display: grid;
     grid-area: nav-logo;
-    height: auto;
-    min-width: 22rem;
+    align-items: center;
+    height: $header-height;
     max-width: 32rem;
+    margin-right: 1rem;
 
     @include breakpoint-up(large) {
       max-width: 40rem;
@@ -79,7 +83,7 @@ $header-height-desktop: 9rem;
       width: 26px;
       background-color: $clr-white;
       transform: rotate(0deg);
-      transform-origin: 2px 1px;
+      transform-origin: 2px 1.5px;
       transition: transform 300ms ease-in-out, opacity 200ms ease-in-out;
       will-change: transform opacity;
 
@@ -91,25 +95,23 @@ $header-height-desktop: 9rem;
 
   .nav-bar {
     grid-area: nav-bar;
-    position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
-    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 6rem;
     background: inherit;
-    border-top: 2px solid white;
+    border-top: 5px solid white;
     width: 100vw;
     height: 100vh;
-    max-height: 40rem;
+    padding-bottom: 6rem;
     text-transform: uppercase;
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
     will-change: transform;
     overflow: scroll;
+    z-index: 1000;
 
     @include breakpoint-up(large) {
       height: $header-height-desktop;
@@ -117,8 +119,8 @@ $header-height-desktop: 9rem;
       position: relative;
       top: initial;
       left: initial;
-      padding-bottom: 0rem;
       flex-direction: row;
+      padding-bottom: 0rem;
       border: none;
       transition: none;
       transform: scale(1, 1);
@@ -132,6 +134,7 @@ $header-height-desktop: 9rem;
       align-items: stretch;
       text-align: center;
       width: 80%;
+      z-index: 1002;
 
       @include breakpoint-up(medium) {
         width: 40%;
@@ -146,7 +149,7 @@ $header-height-desktop: 9rem;
         $transition: transform 250ms ease-in-out, opacity 300ms ease-in-out;
 
         position: relative;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         padding: 1rem 0rem;
         background: $clr-blue-darken3;
         opacity: 0;
@@ -193,7 +196,8 @@ $header-height-desktop: 9rem;
           transition: $transition;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           &::before {
             opacity: 1;
             transform: scale(1, 1);
@@ -202,13 +206,14 @@ $header-height-desktop: 9rem;
       }
     }
 
-    &__cta {
+    .nav-bar__cta {
       width: 50%;
       margin-top: 1rem;
       margin-bottom: 3rem;
       padding: 1rem 1.3rem;
       border: 2px solid $clr-white;
       border-radius: 10px;
+      z-index: 1002;
 
       @include breakpoint-up(medium) {
         width: 33%;

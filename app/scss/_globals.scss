@@ -6,19 +6,23 @@
   padding: 0;
 }
 
-html {
+html,
+body {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
+  position: absolute;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   min-height: 100vh;
+  width: 100vw;
   background-color: $clr-gray;
   color: $clr-white;
   line-height: 1.3;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  z-index: 1;
 }
 
 button,
@@ -150,6 +154,7 @@ img {
     bottom: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius--btn;
     opacity: 0;
     transition: $btn-transition;
   }

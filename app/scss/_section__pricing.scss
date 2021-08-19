@@ -82,9 +82,9 @@
       padding: 1rem 3rem;
       background-color: $clr-green;
       color: $clr-white;
-      border-radius: 1rem;
+      border-radius: $border-radius--btn;
       box-shadow: $box-shadow;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 600;
     }
   }
