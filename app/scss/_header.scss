@@ -1,16 +1,59 @@
 $header-height: 5.6rem;
-$header-height-desktop: 9rem;
+$header-height-desktop: 8rem;
+
+.nav-toggle {
+  display: none;
+
+  &:checked {
+    & ~ header .nav-bar {
+      transform: scale(1, 1);
+
+      .nav-bar__links a,
+      .nav-bar__cta {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+      }
+    }
+
+    & ~ header .nav-toggle-label {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+
+    & ~ header .backdrop {
+      position: fixed;
+      display: block;
+      content: "";
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+      background: rgba(3, 4, 29, 0.5);
+      cursor: default;
+    }
+  }
+}
 
 .header {
   position: sticky;
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 1.5rem 6fr 1fr 1.5rem;
-  grid-template-rows: $header-height auto;
-  grid-template-areas:
+  grid:
     ". nav-logo nav-toggle ."
-    "nav-bar nav-bar nav-bar nav-bar";
+    "nav-bar nav-bar nav-bar nav-bar"
+    / 5vw 6fr 1fr 5vw;
   justify-content: center;
   align-items: center;
   height: $header-height;
@@ -19,12 +62,10 @@ $header-height-desktop: 9rem;
   box-shadow: $box-shadow;
   font-size: 1.5rem;
   overflow: visible;
-  z-index: 999;
+  z-index: 1000;
 
   @include breakpoint-up(large) {
-    grid-template-columns: 1fr 6fr 6fr 1fr;
-    grid-template-rows: $header-height-desktop;
-    grid-template-areas: ". nav-logo nav-bar .";
+    grid: ". nav-logo nav-bar ." auto / 5vw 6fr 6fr 5vw;
     height: $header-height-desktop;
   }
 
@@ -41,41 +82,12 @@ $header-height-desktop: 9rem;
     }
   }
 
-  .nav-toggle {
-    display: none;
-
-    &:checked {
-      & ~ .nav-bar {
-        transform: scale(1, 1);
-
-        .nav-bar__links a,
-        .nav-bar__cta {
-          opacity: 1;
-          transition: opacity 250ms ease-in-out 250ms;
-        }
-      }
-
-      & ~ .nav-toggle-label {
-        > span:first-child {
-          transform: rotate(45deg);
-        }
-
-        > span:nth-child(2) {
-          opacity: 0;
-        }
-
-        > span:last-child {
-          transform: rotate(-45deg);
-        }
-      }
-    }
-  }
-
   .nav-toggle-label {
     grid-area: nav-toggle;
     cursor: pointer;
     margin: 0 auto;
     border: none;
+    z-index: 1001;
 
     > span {
       display: block;
@@ -101,17 +113,19 @@ $header-height-desktop: 9rem;
     flex-direction: column;
     align-items: center;
     background: inherit;
-    border-top: 5px solid white;
+    border-top: 6px solid $clr-purple;
     width: 100vw;
     height: 100vh;
-    padding-bottom: 6rem;
+    max-height: 34rem;
+    padding-bottom: 6.4rem;
     text-transform: uppercase;
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
     will-change: transform;
     overflow: scroll;
-    z-index: 1000;
+    overflow-x: hidden;
+    z-index: 1001;
 
     @include breakpoint-up(large) {
       height: $header-height-desktop;
@@ -157,6 +171,7 @@ $header-height-desktop: 9rem;
         transform-origin: bottom center;
         transition: $transition;
         will-change: transform, opacity;
+        z-index: 1003;
 
         &:first-child {
           margin-top: 2rem;
@@ -208,12 +223,12 @@ $header-height-desktop: 9rem;
 
     .nav-bar__cta {
       width: 50%;
-      margin-top: 1rem;
       margin-bottom: 3rem;
       padding: 1rem 1.3rem;
       border: 2px solid $clr-white;
       border-radius: 10px;
-      z-index: 1002;
+      opacity: 0;
+      z-index: 1003;
 
       @include breakpoint-up(medium) {
         width: 33%;

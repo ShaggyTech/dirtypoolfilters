@@ -187,7 +187,7 @@ img {
   transition: opacity 300ms ease-in-out;
 }
 
-.btn--hover:hover::before {
+.btn--hover:hover::before, .btn--hover:focus::before {
   opacity: 1;
 }
 
@@ -232,6 +232,62 @@ img {
   }
 }
 
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle:checked ~ header .nav-bar {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ header .nav-bar .nav-bar__links a,
+.nav-toggle:checked ~ header .nav-bar .nav-bar__cta {
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease-in-out 250ms;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle:checked ~ header .nav-toggle-label > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav-toggle:checked ~ header .nav-toggle-label > span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ header .nav-toggle-label > span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.nav-toggle:checked ~ header .backdrop {
+  position: fixed;
+  display: block;
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background: rgba(3, 4, 29, 0.5);
+  cursor: default;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -239,11 +295,7 @@ img {
   left: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1.5rem 6fr 1fr 1.5rem;
-      grid-template-columns: 1.5rem 6fr 1fr 1.5rem;
-  -ms-grid-rows: 5.6rem auto;
-      grid-template-rows: 5.6rem auto;
-      grid-template-areas: ". nav-logo nav-toggle ." "nav-bar nav-bar nav-bar nav-bar";
+  grid: ". nav-logo nav-toggle ." "nav-bar nav-bar nav-bar nav-bar" / 5vw 6fr 1fr 5vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -257,25 +309,19 @@ img {
           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-size: 1.5rem;
   overflow: visible;
-  z-index: 999;
+  z-index: 1000;
 }
 
 @media only screen and (min-width: 64em) {
   .header {
-    -ms-grid-columns: 1fr 6fr 6fr 1fr;
-        grid-template-columns: 1fr 6fr 6fr 1fr;
-    -ms-grid-rows: 9rem;
-        grid-template-rows: 9rem;
-        grid-template-areas: ". nav-logo nav-bar .";
-    height: 9rem;
+    grid: ". nav-logo nav-bar ." auto / 5vw 6fr 6fr 5vw;
+    height: 8rem;
   }
 }
 
 .header__logo {
   display: -ms-grid;
   display: grid;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: nav-logo;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -291,43 +337,12 @@ img {
   }
 }
 
-.header .nav-toggle {
-  display: none;
-}
-
-.header .nav-toggle:checked ~ .nav-bar {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-}
-
-.header .nav-toggle:checked ~ .nav-bar .nav-bar__links a,
-.header .nav-toggle:checked ~ .nav-bar .nav-bar__cta {
-  opacity: 1;
-  -webkit-transition: opacity 250ms ease-in-out 250ms;
-  transition: opacity 250ms ease-in-out 250ms;
-}
-
-.header .nav-toggle:checked ~ .nav-toggle-label > span:first-child {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.header .nav-toggle:checked ~ .nav-toggle-label > span:nth-child(2) {
-  opacity: 0;
-}
-
-.header .nav-toggle:checked ~ .nav-toggle-label > span:last-child {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
 .header .nav-toggle-label {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
   grid-area: nav-toggle;
   cursor: pointer;
   margin: 0 auto;
   border: none;
+  z-index: 1001;
 }
 
 .header .nav-toggle-label > span {
@@ -351,9 +366,6 @@ img {
 }
 
 .header .nav-bar {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
   grid-area: nav-bar;
   top: 0;
   left: 0;
@@ -368,10 +380,11 @@ img {
       -ms-flex-align: center;
           align-items: center;
   background: inherit;
-  border-top: 5px solid white;
+  border-top: 6px solid #8a426d;
   width: 100vw;
   height: 100vh;
-  padding-bottom: 6rem;
+  max-height: 34rem;
+  padding-bottom: 6.4rem;
   text-transform: uppercase;
   -webkit-transform: scale(1, 0);
           transform: scale(1, 0);
@@ -383,12 +396,13 @@ img {
   transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
   will-change: transform;
   overflow: scroll;
-  z-index: 1000;
+  overflow-x: hidden;
+  z-index: 1001;
 }
 
 @media only screen and (min-width: 64em) {
   .header .nav-bar {
-    height: 9rem;
+    height: 8rem;
     width: 100%;
     position: relative;
     top: initial;
@@ -456,6 +470,7 @@ img {
   transition: transform 250ms ease-in-out, opacity 300ms ease-in-out;
   transition: transform 250ms ease-in-out, opacity 300ms ease-in-out, -webkit-transform 250ms ease-in-out;
   will-change: transform, opacity;
+  z-index: 1003;
 }
 
 .header .nav-bar__links .nav-link:first-child {
@@ -464,7 +479,7 @@ img {
 
 @media only screen and (min-width: 64em) {
   .header .nav-bar__links .nav-link {
-    line-height: 9rem;
+    line-height: 8rem;
     margin-bottom: 0;
     margin-right: 2rem;
     padding: 0rem 1.5ch;
@@ -509,12 +524,12 @@ img {
 
 .header .nav-bar .nav-bar__cta {
   width: 50%;
-  margin-top: 1rem;
   margin-bottom: 3rem;
   padding: 1rem 1.3rem;
   border: 2px solid #fbf9f9;
   border-radius: 10px;
-  z-index: 1002;
+  opacity: 0;
+  z-index: 1003;
 }
 
 @media only screen and (min-width: 40em) {
@@ -536,9 +551,7 @@ img {
 .hero {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-areas: "container1" "container2";
+  grid: "container1" 1fr "container2" 1fr;
   gap: 2rem;
   height: 100%;
   margin-bottom: 3rem;
@@ -556,18 +569,12 @@ img {
 
 @media only screen and (min-width: 64em) {
   .hero {
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "container1 container2";
+    grid: "container1 container2" 1fr / 1fr 1fr;
     height: auto;
   }
 }
 
 .hero__container1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: container1;
   display: -ms-grid;
   display: grid;
@@ -637,8 +644,6 @@ img {
 }
 
 .hero__container2 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   grid-area: container2;
   display: -ms-grid;
   display: grid;
