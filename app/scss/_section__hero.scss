@@ -83,7 +83,7 @@
 
     img {
       width: 100vw;
-      max-height: 100vh;
+      height: 100%;
 
       @include breakpoint-up(medium) {
         padding: 4rem;

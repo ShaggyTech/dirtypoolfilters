@@ -20,7 +20,7 @@
     <title>FCC: Landing Page</title>
   </head>
   <body>
-    <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+    <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-labelledby="nav-toggle-label"/>
 
     <header class="header container">
       <a href="#" class="header__logo">
@@ -42,6 +42,7 @@
         >
       </nav>
       <label
+        id="nav-toggle-label"
         for="nav-toggle"
         class="nav-toggle-label hide-on-desktop"
         title="Mobile menu toggle"
@@ -140,7 +141,7 @@
         </article>
       </section>
       <section id="contact" class="contact">
-        <form id="form" class="form" action="#">
+        <form id="contact-form" class="form" action="#">
           <fieldset>
             <legend>Contact Us</legend>
             <div class="fields-wrapper">
@@ -236,7 +237,7 @@
           </fieldset>
           <button
             type="submit"
-            form="form"
+            form="contact-form"
             value="submit"
             id="submit"
             class="btn btn--hover"

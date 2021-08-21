@@ -81,7 +81,7 @@ input[type="text"]:not(:placeholder-shown):not(:focus):valid,
 input[type="email"]:not(:placeholder-shown):not(:focus):valid,
 input[type="password"]:not(:placeholder-shown):not(:focus):valid,
 input[type="number"]:not(:placeholder-shown):not(:focus):valid {
-  border-color: #1f9864;
+  border-color: #197b50;
 }
 
 input[type="text"]:not(:placeholder-shown):not(:focus):valid:hover,
@@ -248,44 +248,41 @@ img {
   display: none;
 }
 
-.nav-toggle:checked ~ header .nav-bar {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-}
-
-.nav-toggle:checked ~ header .nav-bar .nav-bar__links a,
-.nav-toggle:checked ~ header .nav-bar .nav-bar__cta {
-  opacity: 1;
-  -webkit-transition: opacity 250ms ease-in-out 250ms;
-  transition: opacity 250ms ease-in-out 250ms;
-}
-
-.nav-toggle:checked ~ header .nav-toggle-label > span:first-child {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.nav-toggle:checked ~ header .nav-toggle-label > span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle:checked ~ header .nav-toggle-label > span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.nav-toggle:checked ~ header .backdrop {
-  position: fixed;
-  display: block;
-  content: "";
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999;
-  background: rgba(3, 4, 29, 0.5);
-  cursor: default;
+@media only screen and (max-width: 63.9375em) {
+  .nav-toggle:checked ~ header .nav-bar {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  .nav-toggle:checked ~ header .nav-bar .nav-bar__links a,
+  .nav-toggle:checked ~ header .nav-bar .nav-bar__cta {
+    opacity: 1;
+    -webkit-transition: opacity 250ms ease-in-out 250ms;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  .nav-toggle:checked ~ header .nav-toggle-label > span:first-child {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .nav-toggle:checked ~ header .nav-toggle-label > span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ header .nav-toggle-label > span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .nav-toggle:checked ~ header .backdrop {
+    position: fixed;
+    display: block;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background: rgba(3, 4, 29, 0.5);
+    cursor: default;
+  }
 }
 
 .header {
@@ -295,7 +292,7 @@ img {
   left: 0;
   display: -ms-grid;
   display: grid;
-  grid: ". nav-logo nav-toggle ." "nav-bar nav-bar nav-bar nav-bar" / 5vw 6fr 1fr 5vw;
+  grid: ". nav-logo nav-toggle ." "nav-bar nav-bar nav-bar nav-bar" auto / 5vw 6fr 1fr 5vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -652,7 +649,7 @@ img {
 
 .hero__container2 img {
   width: 100vw;
-  max-height: 100vh;
+  height: 100%;
 }
 
 @media only screen and (min-width: 40em) {
@@ -724,7 +721,7 @@ img {
 .pricing__card h4 {
   font-size: 4.5rem;
   font-weight: 800;
-  color: #1f9864;
+  color: #00b868;
 }
 
 .pricing__card p {
@@ -753,7 +750,7 @@ img {
   margin-top: 2rem;
   margin-bottom: 3rem;
   padding: 1rem 3rem;
-  background-color: #1f9864;
+  background-color: #197b50;
   color: #fbf9f9;
   border-radius: 1rem;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -856,7 +853,7 @@ img {
   width: 80%;
   padding: 0.8rem;
   border-radius: 0.5rem;
-  background-color: #1f9864;
+  background-color: #197b50;
   color: #fbf9f9;
   font-size: 1.8rem;
   font-weight: bold;

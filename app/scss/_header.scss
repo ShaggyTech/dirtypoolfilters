@@ -4,43 +4,45 @@ $header-height-desktop: 8rem;
 .nav-toggle {
   display: none;
 
-  &:checked {
-    & ~ header .nav-bar {
-      transform: scale(1, 1);
+  @include breakpoint-down(medium) {
+    &:checked {
+      & ~ header .nav-bar {
+        transform: scale(1, 1);
 
-      .nav-bar__links a,
-      .nav-bar__cta {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms;
-      }
-    }
-
-    & ~ header .nav-toggle-label {
-      > span:first-child {
-        transform: rotate(45deg);
+        .nav-bar__links a,
+        .nav-bar__cta {
+          opacity: 1;
+          transition: opacity 250ms ease-in-out 250ms;
+        }
       }
 
-      > span:nth-child(2) {
-        opacity: 0;
+      & ~ header .nav-toggle-label {
+        > span:first-child {
+          transform: rotate(45deg);
+        }
+
+        > span:nth-child(2) {
+          opacity: 0;
+        }
+
+        > span:nth-child(3) {
+          transform: rotate(-45deg);
+        }
       }
 
-      > span:nth-child(3) {
-        transform: rotate(-45deg);
+      & ~ header .backdrop {
+        position: fixed;
+        display: block;
+        content: "";
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+        background: rgba(3, 4, 29, 0.5);
+        cursor: default;
       }
-    }
-
-    & ~ header .backdrop {
-      position: fixed;
-      display: block;
-      content: "";
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 999;
-      background: rgba(3, 4, 29, 0.5);
-      cursor: default;
     }
   }
 }
@@ -53,7 +55,7 @@ $header-height-desktop: 8rem;
   grid:
     ". nav-logo nav-toggle ."
     "nav-bar nav-bar nav-bar nav-bar"
-    / 5vw 6fr 1fr 5vw;
+    auto / 5vw 6fr 1fr 5vw;
   justify-content: center;
   align-items: center;
   height: $header-height;
