@@ -1,0 +1,33 @@
+.services {
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  width: 100vw;
+  font-size: 1.6rem;
+  background-color: $clr-secondary;
+  text-align: center;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 4rem;
+    place-items: center;
+    place-content: center;
+    width: 100%;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    height: clamp(min-content, 38rem, max-content);
+    max-width: 30rem;
+    padding: 2rem;
+    background-color: $clr-purple;
+
+    img {
+      height: 7.5rem;
+      width: 7.5rem;
+      margin: 3rem auto;
+    }
+  }
+}
