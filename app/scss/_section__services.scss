@@ -1,15 +1,24 @@
 .services {
-  margin: 3rem auto;
-  padding: 1rem 2rem;
-  width: 100vw;
-  font-size: 1.6rem;
-  background-color: $clr-secondary;
+  padding: 3rem 4rem;
+  height: fit-content;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: $clr-blue-darken1;
   text-align: center;
+
+  @include breakpoint-up(large) {
+    padding: 2rem 10rem;
+  }
+
+  &__title {
+    padding-bottom: 3rem;
+  }
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-rows: 1fr auto;
+    gap: 3rem;
     place-items: center;
     place-content: center;
     width: 100%;
@@ -19,15 +28,17 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    height: clamp(min-content, 38rem, max-content);
-    max-width: 30rem;
-    padding: 2rem;
-    background-color: $clr-purple;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 1.4rem 1.2rem;
+    background-color: $clr-blue-darken3;
+    border-radius: $border-radius;
 
     img {
-      height: 7.5rem;
-      width: 7.5rem;
-      margin: 3rem auto;
+      height: 6rem;
+      width: 6rem;
+      margin: 2rem auto;
     }
   }
 }
