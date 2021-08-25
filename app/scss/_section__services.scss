@@ -1,9 +1,6 @@
 .services {
   padding: 3rem 4rem;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
-  place-content: center;
   width: 100%;
   font-size: 1rem;
   background-color: $clr-blue-darken1;
@@ -15,6 +12,7 @@
 
   @include breakpoint-up(large) {
     padding: 10rem 10rem;
+    min-height: 50rem;
     font-size: 1.4rem;
   }
 
