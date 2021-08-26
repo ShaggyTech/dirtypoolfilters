@@ -1,18 +1,19 @@
 .services {
-  padding: 3rem 4rem;
   height: fit-content;
   width: 100%;
+  padding: 3rem 4rem;
   font-size: 1rem;
-  background-color: $clr-blue-darken1;
   text-align: center;
+  background-color: $clr-blue-darken1;
 
   @include breakpoint-up(medium) {
+    min-height: 40rem;
     font-size: 1.2rem;
   }
 
   @include breakpoint-up(large) {
-    padding: 10rem 10rem;
     min-height: 50rem;
+    padding: 10rem 10rem;
     font-size: 1.4rem;
   }
 
@@ -22,9 +23,9 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     grid-template-rows: 1fr auto;
-    gap: 2.6rem;
+    gap: 3rem;
     place-items: center;
     place-content: center;
     width: 100%;
@@ -34,24 +35,26 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 2rem;
-    background-color: $clr-primary;
+    padding: 4rem;
     border-radius: $border-radius;
+    box-shadow: $box-shadow;
 
-    img {
-      height: 6rem;
-      width: 6rem;
-      margin: 2rem auto;
+    &__title {
+      font-size: 2rem;
+      margin: 3rem auto;
     }
 
-    #icon-clock {
-      stroke: red;
-      background-color: $clr-white;
-      border-radius: 10px;
-      padding: 1rem;
+    &__icon {
+      height: 12rem;
+      width: 12rem;
+      padding: 1.6rem;
+    }
+
+    &__text {
+      font-size: 1.6rem;
     }
   }
 }
