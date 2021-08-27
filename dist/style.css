@@ -869,7 +869,7 @@ img {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
-  padding: 0rem 3rem;
+  padding: 6rem 4rem;
   font-size: 1rem;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#014d84), color-stop(25%, #468faf), color-stop(50%, #468faf), color-stop(65%, #468faf), to(#014d84));
@@ -892,7 +892,8 @@ img {
 
 .services__title {
   font-size: 2.6em;
-  padding-bottom: 3rem;
+  margin-bottom: 5rem;
+  color: #eceaea;
 }
 
 .services__wrapper {
@@ -900,13 +901,11 @@ img {
   display: grid;
   -ms-grid-columns: (minmax(24rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
   gap: 3rem;
   place-items: center;
   place-content: center;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .services__card {
@@ -921,31 +920,33 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  width: auto;
   height: 100%;
-  padding: 2rem;
+  padding: 1.4rem;
   border-radius: 0.5rem;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  background-color: #f2f2f2;
+  background-color: #eceaea;
   color: #013b65;
 }
 
 .services__card__title {
   font-size: 1.6em;
   margin: 1rem auto;
+  color: #014a7e;
 }
 
 .services__card__icon {
-  height: 12rem;
-  width: 12rem;
-  padding: 1.6rem;
+  height: 7rem;
+  width: 7rem;
   margin-bottom: 1rem;
 }
 
 .services__card__text {
   font-size: 1.4em;
   margin-bottom: 2rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  color: #253641;
 }
 /*# sourceMappingURL=style.css.map */
