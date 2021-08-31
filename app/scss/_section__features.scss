@@ -14,17 +14,9 @@
   );
   cursor: default;
 
-  @include breakpoint-up(medium) {
-    font-size: 1.2rem;
-  }
-
-  @include breakpoint-up(large) {
-    font-size: 1.3rem
-  }
-
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
     gap: 3rem;
     place-items: center;
     place-content: center;
@@ -49,7 +41,7 @@
     transition: transform 0.15s;
 
     &:hover {
-        transform: scale(1.015);
+      transform: scale(1.05);
     }
 
     &__title {
@@ -59,22 +51,21 @@
       color: $clr-blue-darken1;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
-        top: 100%;
+        bottom: -14px;
         left: 0;
-        margin-top: 0.4rem;
         height: 0.24em;
         width: 100%;
         background-color: $clr-purple;
-        border-radius: 50%;
+        border-radius: $border-radius;
       }
     }
 
     &__icon {
       height: 6em;
       width: 6em;
-      margin-bottom: 1.3em;
+      margin: 1.3em auto 1.3em;
     }
 
     &__text {

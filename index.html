@@ -7,10 +7,8 @@
     <meta
       name="description"
       content="Professional pool cleaning and maintenance, serving the DFW metrolplex."
-      <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;600;800&display=swap"
@@ -27,18 +25,18 @@
       aria-labelledby="nav-toggle-label"
     />
 
-    <header class="header container">
+    <header id="header" class="header container">
       <a href="#" class="header__logo">
         <img
-          src="https://files.dubsquared.com/index.php/apps/sharingpath/shaggy/www/DirtyPoolFilters-Logo__transparent.png"
+          src="app/assets/DirtyPoolFilters-Logo__transparent.png"
           alt="Dirty Pool Filters"
+          id="header-img"
         />
       </a>
       <nav id="nav-bar" class="nav-bar">
         <div class="nav-bar__links">
-          <a href="#" class="nav-link">Home</a>
+          <a href="#hero" class="nav-link">Home</a>
           <a href="#features" class="nav-link">Features</a>
-          <a href="#services" class="nav-link">Services</a>
           <a href="#pricing" class="nav-link">Pricing</a>
         </div>
         <a href="#contact" class="nav-bar__cta btn btn--dark btn--hover"
@@ -89,7 +87,7 @@
       <section id="features" class="features">
         <div class="features__wrapper">
           <article class="features__card">
-            <h3 class="features__card__title">Professional Technicans</h3>
+            <h2 class="features__card__title">Professional Technicans</h2>
             <img
               src="app/assets/female-technician.svg"
               alt="technician icon"
@@ -101,7 +99,7 @@
             </p>
           </article>
           <article class="features__card">
-            <h3 class="features__card__title">Hassle Free Service</h3>
+            <h2 class="features__card__title">Hassle Free Service</h2>
             <img
               src="app/assets/happy-cloud-sun.svg"
               alt="smiling cloud and sun icon"
@@ -113,21 +111,19 @@
             </p>
           </article>
           <article class="features__card">
-            <h3 class="features__card__title">
-              Proudly serving the Fort Worth Area
-            </h3>
+            <h2 class="features__card__title">Serving the Fort Worth Area</h2>
             <img
               src="app/assets/texas-flag.svg"
               alt="texas flag icon"
               class="features__card__icon"
             />
             <p class="features__card__text">
-              Contact us to see if we service your neighborhood. We cast a wide net around Fort Worth,
-              Texas 
+              Contact us to see if we service your neighborhood. We cast a wide
+              net around Fort Worth, Texas
             </p>
           </article>
           <article class="features__card">
-            <h3 class="features__card__title">Leisure Time is Priceless</h3>
+            <h2 class="features__card__title">Leisure Time is Priceless</h2>
             <img
               src="app/assets/hourglass.svg"
               alt="hourglass icon"
@@ -201,7 +197,7 @@
         </article>
       </section>
       <section id="contact" class="contact">
-        <form id="contact-form" class="form" action="#">
+        <form id="form" class="form" action="#">
           <fieldset>
             <legend>Contact Us</legend>
             <div class="fields-wrapper">
@@ -295,27 +291,77 @@
               </div>
             </div>
           </fieldset>
-          <button
+          <input
             type="submit"
-            form="contact-form"
-            value="submit"
+            form="form"
             id="submit"
+            value="Submit"
             class="btn btn--hover"
-          >
-            Submit
-          </button>
+          />
         </form>
       </section>
-      <section id="services" class="services">
-        
+      <section class="video">
+        <h2 class="video__title">How to clean a D.E. Filter</h2>
+        <iframe
+          id="video"
+          class="video__player"
+          type="text/html"
+          src="https://www.youtube.com/embed/BHIZYr5TCnc?modestbranding=1"
+          frameborder="0"
+          title="How to clean a D.E. Filter"
+        ></iframe>
       </section>
     </main>
-    <footer id="footer" class="container">
-      <span>Made by </span>
-      <a href="http://github.com/shaggytech" target="_blank" rel="noopener"
-        >Brandon Eichler</a
-      >
-      <span>for freeCodeCamp challenge: Product Landing Page</span>
+    <footer id="footer" class="container footer">
+      <ul class="footer__social">
+        <li>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener"
+            ><img
+              src="app/assets/facebook-icon.svg"
+              alt="facebook icon"
+              class="footer__social__icon"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener"
+            ><img
+              src="app/assets/instagram-icon.svg"
+              alt="instagram icon"
+              class="footer__social__icon"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener"
+            ><img
+              src="app/assets/twitter-icon.svg"
+              alt="twitter icon"
+              class="footer__social__icon"
+          /></a>
+        </li>
+        <li>
+          <a href="mailto:service@dirtypoolfilters.com" target="_blank"
+            ><img
+              src="app/assets/email-icon.svg"
+              alt="email icon"
+              class="footer__social__icon"
+          /></a>
+        </li>
+      </ul>
+      <section class="footer__author">
+        <span>Made by </span>
+        <a href="http://github.com/shaggytech" target="_blank" rel="noopener"
+          >Brandon Eichler</a
+        >
+        <span
+          >for
+          <a
+            href="https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page"
+            target="_blank"
+            rel="noopener"
+            >freeCodeCamp challenge: Product Landing Page</a
+          ></span
+        >
+      </section>
     </footer>
   </body>
 </html>

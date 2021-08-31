@@ -1,0 +1,44 @@
+.footer {
+  $padding: 3rem 2rem;
+
+  height: 20rem;
+  background-color: $clr-white-dark;
+  font-size: 1.4rem;
+
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 2rem;
+    place-items: center;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: $padding;
+
+    &__icon {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+      box-shadow: $box-shadow;
+      transform: scale(1);
+      transition: transform 0.15s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__author {
+    width: 100%;
+    padding: $padding;
+    text-align: center;
+    background-color: $clr-bg;
+
+    a {
+      color: $clr-green-light;
+    }
+  }
+}
