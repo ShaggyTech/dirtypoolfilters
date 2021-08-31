@@ -887,6 +887,7 @@ img {
   font-size: 2.6rem;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media only screen and (min-width: 40em) {
